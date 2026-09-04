@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retama Family Medicine Residency Program | TIGMER San Antonio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0B2545',
+              dark: '#133E6E',
+              blue: '#134074',
+              teal: '#00A896',
+              tealDark: '#028090',
+              accent: '#E0FAEE',
+              surface: '#F8FAFC',
+              border: '#E2E8F0',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+    .nav-item.active-nav {
+      color: #00A896;
+      border-bottom: 2px solid #00A896;
+    }
+  </style>
+</head>
+<body class="bg-brand-surface text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-teal selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <header class="bg-brand-navy text-slate-300 text-xs py-2 px-4 border-b border-brand-dark flex flex-wrap justify-between items-center z-50">
+    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-teal/20 text-brand-teal">
+          In Development
+        </span>
+        <span>Anticipated Inaugural Match: Class of 2027 (ACGME Accreditation Pending)</span>
+      </div>
+      <div class="flex items-center gap-6 text-xs">
+        <span><i class="fa-solid fa-location-dot text-brand-teal mr-1"></i> San Antonio, TX</span>
+        <span><i class="fa-solid fa-envelope text-brand-teal mr-1"></i> contact@retamafm.org</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN NAVIGATION BAR -->
+  <nav class="sticky top-0 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-4 cursor-pointer" onclick="navigateTo('home')">
+          <img src="TIGMER Logo.jpg" alt="TIGMER Logo" class="h-12 w-auto object-contain rounded" onerror="this.src='https://via.placeholder.com/48x48?text=TIGMER'" />
+          <div>
+            <span class="block text-xl font-extrabold text-brand-navy tracking-tight leading-tight">Retama Family Medicine</span>
+            <span class="block text-xs font-semibold tracking-wider uppercase text-brand-tealDark">Residency Program • San Antonio</span>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden xl:flex items-center space-x-1">
+          <button onclick="navigateTo('home')" id="nav-home" class="nav-item active-nav px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Home</button>
+          <button onclick="navigateTo('why-choice')" id="nav-why-choice" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Why RFM</button>
+          <button onclick="navigateTo('why-fm')" id="nav-why-fm" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Why FM</button>
+          <button onclick="navigateTo('about')" id="nav-about" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">About Us</button>
+          <button onclick="navigateTo('goals')" id="nav-goals" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Objectives</button>
+          <button onclick="navigateTo('rotations')" id="nav-rotations" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Rotations</button>
+          <button onclick="navigateTo('didactics')" id="nav-didactics" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Didactics</button>
+          <button onclick="navigateTo('faculty')" id="nav-faculty" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Faculty</button>
+          <button onclick="navigateTo('residents')" id="nav-residents" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">Residents</button>
+          <button onclick="navigateTo('san-antonio')" id="nav-san-antonio" class="nav-item px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-teal transition">San Antonio</button>
+          <button onclick="navigateTo('apply')" id="nav-apply" class="ml-2 px-4 py-2 text-sm font-bold text-white bg-brand-teal hover:bg-brand-tealDark rounded-md shadow-sm transition">Apply</button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex xl:hidden items-center">
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-brand-navy p-2 focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Home</button>
+      <button onclick="navigateTo('why-choice'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Why RFM Residency</button>
+      <button onclick="navigateTo('why-fm'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Why Choose Family Medicine</button>
+      <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">About Us</button>
+      <button onclick="navigateTo('goals'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Goals & Objectives</button>
+      <button onclick="navigateTo('rotations'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Rotations (Core, Electives, Med Students)</button>
+      <button onclick="navigateTo('didactics'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Didactics & Academics</button>
+      <button onclick="navigateTo('faculty'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Faculty & Administration</button>
+      <button onclick="navigateTo('residents'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Meet Residents</button>
+      <button onclick="navigateTo('san-antonio'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Life in San Antonio</button>
+      <button onclick="navigateTo('contact'); toggleMobileMenu()" class="block w-full text-left py-2 font-medium text-slate-700">Contact Us</button>
+      <button onclick="navigateTo('apply'); toggleMobileMenu()" class="block w-full text-center py-2.5 font-bold text-white bg-brand-teal rounded">Apply to RFM</button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- ============================================== -->
+    <!-- 1. HOME HERO / LANDING PAGE                   -->
+    <!-- ============================================== -->
+    <section id="page-home" class="page-section active">
+      <!-- Hero -->
+      <div class="relative bg-gradient-to-br from-brand-navy via-brand-dark to-brand-blue text-white overflow-hidden py-24 lg:py-32">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00A896_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/20 border border-brand-teal/40 text-brand-teal text-xs font-bold uppercase tracking-wider mb-6">
+              <i class="fa-solid fa-hospital-user"></i> San Antonio, Texas
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+              Transformative Community Care. Advanced Clinical Excellence.
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 font-normal leading-relaxed mb-8">
+              A pioneering Family Medicine residency integrating comprehensive hospital-based and community-based training in collaboration with <span class="text-white font-semibold underline decoration-brand-teal underline-offset-4">University Health</span> and <span class="text-white font-semibold underline decoration-brand-teal underline-offset-4">CommuniCare Health Centers</span>.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button onclick="navigateTo('why-choice')" class="px-6 py-3.5 bg-brand-teal hover:bg-brand-tealDark text-white font-bold rounded-lg shadow-lg hover:shadow-brand-teal/20 transition flex items-center gap-2">
+                Why RFM is the RIGHT Choice <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button onclick="navigateTo('apply')" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold rounded-lg backdrop-blur transition">
+                Application & Eligibility
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overview Stats Grid -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-start gap-4">
+            <div class="p-3 bg-brand-accent rounded-lg text-brand-tealDark text-xl font-bold"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <div class="text-2xl font-black text-brand-navy">8 Per Class</div>
+              <div class="text-xs font-semibold text-slate-500 uppercase mt-0.5">24 Total Residents</div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-start gap-4">
+            <div class="p-3 bg-blue-50 rounded-lg text-brand-blue text-xl font-bold"><i class="fa-solid fa-hospital"></i></div>
+            <div>
+              <div class="text-2xl font-black text-brand-navy">Hybrid Model</div>
+              <div class="text-xs font-semibold text-slate-500 uppercase mt-0.5">Inpatient & Ambulatory</div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-start gap-4">
+            <div class="p-3 bg-emerald-50 rounded-lg text-emerald-600 text-xl font-bold"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div>
+              <div class="text-2xl font-black text-brand-navy">100% Local</div>
+              <div class="text-xs font-semibold text-slate-500 uppercase mt-0.5">San Antonio Rotations</div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-start gap-4">
+            <div class="p-3 bg-purple-50 rounded-lg text-purple-600 text-xl font-bold"><i class="fa-solid fa-hand-holding-heart"></i></div>
+            <div>
+              <div class="text-2xl font-black text-brand-navy">Holistic Care</div>
+              <div class="text-xs font-semibold text-slate-500 uppercase mt-0.5">Serving Diverse Families</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collaborative Partners -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-brand-tealDark">Unified Clinical Excellence</h2>
+          <p class="text-3xl font-extrabold text-brand-navy mt-1">Our Foundational Partners</p>
+          <p class="text-slate-600 mt-2">Connecting academic tertiary hospital systems with community health centers to serve South Texas families.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-teal transition flex flex-col justify-between">
+            <div>
+              <div class="text-brand-blue text-3xl mb-4"><i class="fa-solid fa-building-columns"></i></div>
+              <h3 class="text-xl font-bold text-brand-navy mb-2">TIGMER</h3>
+              <p class="text-sm text-slate-600">Texas Institute for Graduate Medical Education and Research. Leading medical education sponsorship committed to rural, community, and underserved physician pipelines.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-brand-tealDark uppercase">Sponsoring Institution</div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-teal transition flex flex-col justify-between">
+            <div>
+              <div class="text-brand-teal text-3xl mb-4"><i class="fa-solid fa-hospital-wide"></i></div>
+              <h3 class="text-xl font-bold text-brand-navy mb-2">University Health</h3>
+              <p class="text-sm text-slate-600">San Antonio's premier public health network and academic medical partner, offering tertiary adult inpatient care, trauma, critical care, and subspecialty depth.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-brand-tealDark uppercase">Inpatient & Tertiary Partner</div>
+          </div>
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-teal transition flex flex-col justify-between">
+            <div>
+              <div class="text-brand-dark text-3xl mb-4"><i class="fa-solid fa-house-chimney-medical"></i></div>
+              <h3 class="text-xl font-bold text-brand-navy mb-2">CommuniCare Health</h3>
+              <p class="text-sm text-slate-600">An expansive FQHC providing culturally competent, compassionate primary care, women's health, behavioral health, and dental services to underinsured South Texas families.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-brand-tealDark uppercase">Community Health Partner</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 2. WHY RFM IS THE RIGHT CHOICE                 -->
+    <!-- ============================================== -->
+    <section id="page-why-choice" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Distinctive Strengths</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Why RFM Residency is the RIGHT Choice</h1>
+          <p class="text-slate-600 mt-4 text-base">We have designed the Retama Family Medicine training program from the ground up to address what modern medical graduates genuinely need: balanced volume, rigorous mentorship, zero out-of-town commuting, and continuous community engagement.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-brand-accent text-brand-teal flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-code-branch"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">True Hybrid Training Model</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Unlike programs isolated inside academic ivory towers or small standalone clinics, our residents rotate through both major hospital systems (University Health) and robust community networks (CommuniCare).</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-route"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">100% Local Rotations</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">All core inpatient, outpatient, and specialty rotations occur within San Antonio. Residents are never asked to disrupt family life for distant rotations or endure long commutes between health systems.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Graduated Continuity Panel</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Your panel targets expand steadily from 4 patients per session in PGY-1 to 10 in PGY-3. This structured volume curve prevents burnout while developing swift, confident ambulatory efficiency.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Holistic Resident Wellness</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">We protect mental and physical health with structured fatigue mitigation, monthly peer support debriefs, quarterly wellness half-days, and a culture that treats sleep, family, and personal dignity as vital.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Dedicated Scholarly Inquiry</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Residents receive faculty mentorship to complete two scholarly activities, including at least one Quality Improvement initiative presented at local, regional, or national venues.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="text-lg font-bold text-brand-navy mb-3">Community Advocacy & Equity</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">San Antonio has a vibrant, bilingual, and medically underserved community. You will train directly on addressing the social determinants of health, language barriers, and healthcare equity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 3. WHY CHOOSE FAMILY MEDICINE                  -->
+    <!-- ============================================== -->
+    <section id="page-why-fm" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">The Heart of Healthcare</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Why Choose Family Medicine?</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Family medicine is the cornerstone of a functional healthcare system. It is the only specialty offering true lifelong continuity, where physicians manage undifferentiated acute illnesses, complex multisystem chronic conditions, procedural interventions, and behavioral health across generations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 flex gap-5">
+            <div class="text-brand-teal text-3xl flex-shrink-0"><i class="fa-solid fa-baby-carriage"></i></div>
+            <div>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Cradle-to-Grave Continuity</h3>
+              <p class="text-sm text-slate-600">From welcoming a newborn into the world to supporting elderly patients with dignity and palliative comfort, family physicians provide enduring healthcare partnerships across all ages and life transitions.</p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 flex gap-5">
+            <div class="text-brand-teal text-3xl flex-shrink-0"><i class="fa-solid fa-brain"></i></div>
+            <div>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Master Diagnostic Reasoning</h3>
+              <p class="text-sm text-slate-600">Family physicians are diagnosticians of the first contact. You evaluate symptoms before they have a label, discerning when to reassure, when to treat in the clinic, and when to escalate to tertiary critical care.</p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 flex gap-5">
+            <div class="text-brand-teal text-3xl flex-shrink-0"><i class="fa-solid fa-syringe"></i></div>
+            <div>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Broad Procedural Breadth</h3>
+              <p class="text-sm text-slate-600">Family doctors perform joint injections, POCUS, skin biopsies, laceration repairs, IUD/Nexplanon placements, and uncomplicated deliveries, delivering full-scope care under one roof.</p>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 flex gap-5">
+            <div class="text-brand-teal text-3xl flex-shrink-0"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div>
+              <h3 class="text-lg font-bold text-brand-navy mb-2">Unparalleled Career Flexibility</h3>
+              <p class="text-sm text-slate-600">Whether your ultimate passion is outpatient primary care, inpatient hospitalist medicine, emergency care, sports medicine, or public health leadership, family medicine provides the platform to define your own career path.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote Callout -->
+        <div class="bg-brand-navy text-white rounded-2xl p-8 sm:p-12 relative overflow-hidden">
+          <div class="max-w-3xl">
+            <p class="text-xl sm:text-2xl font-light italic leading-relaxed text-slate-200">
+              "Family physicians advocate for all patients and work to remove barriers to care for all populations. They advocate for their patients through the development and promotion of health policy by working with local organizations and partnering to promote better health."
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="h-10 w-1 bg-brand-teal"></div>
+              <div>
+                <p class="font-bold text-white text-sm">ACGME Family Medicine Guiding Philosophy</p>
+                <p class="text-xs text-slate-300">Section 1: Oversight & Foundation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 4. ABOUT US                                    -->
+    <!-- ============================================== -->
+    <section id="page-about" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Our Identity & Mission</span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1 mb-6">About Retama Family Medicine</h1>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              Retama Family Medicine Residency is a new, forward-thinking residency program located in vibrant San Antonio, Texas. Sponsored by <strong>TIGMER</strong> (Texas Institute for Graduate Medical Education and Research), our program was founded to meet the healthcare needs of South Texas through community-grounded medical training.
+            </p>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              Through strategic collaboration with <strong>University Health</strong> and <strong>CommuniCare Health Centers</strong>, we combine high-acuity tertiary inpatient care with compassionate, community-based ambulatory medicine. 
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+              By fostering a culture of lifelong learning, holistic wellness, and collaborative innovation, our faculty prepare residents to deliver high-quality, evidence-based care that enhances the health and vitality of the diverse families we are privileged to serve.
+            </p>
+          </div>
+          <div class="bg-gradient-to-tr from-brand-navy to-brand-blue rounded-2xl p-8 sm:p-12 text-white shadow-xl">
+            <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+              <i class="fa-solid fa-compass text-brand-teal"></i> Core Values
+            </h3>
+            <ul class="space-y-4 text-slate-200">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1"></i>
+                <span><strong>Community First:</strong> Centering clinical education on the needs of underserved and bilingual patient populations.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1"></i>
+                <span><strong>Clinical Integrity:</strong> Practicing high-value, evidence-based, transparent, and patient-centered medicine.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1"></i>
+                <span><strong>Master Adaptive Learning:</strong> Developing habit patterns of critical appraisal, continuous self-evaluation, and intellectual curiosity.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1"></i>
+                <span><strong>Holistic Wellness:</strong> Prioritizing resident longevity, team camaraderie, psychological safety, and fatigue mitigation.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Continuity Model Breakdown -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-bold text-brand-navy mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check text-brand-teal"></i> The Continuity Clinic (FMP) Architecture
+          </h3>
+          <p class="text-sm text-slate-600 mb-6">
+            The Family Medicine Practice (FMP) serves as the academic home for all residents throughout their 3-year tenure. In accordance with ACGME standards, continuity clinics are maintained for at least 40 weeks per year, guaranteeing longitudinal patient-physician relationships.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-brand-surface border-b border-slate-200 text-xs font-bold text-brand-navy uppercase">
+                  <th class="py-3 px-4">PGY Level</th>
+                  <th class="py-3 px-4">Weekly Clinic Sessions</th>
+                  <th class="py-3 px-4">First 6 Months Volume Target</th>
+                  <th class="py-3 px-4">Second 6 Months Volume Target</th>
+                  <th class="py-3 px-4">Core Educational Focus</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm divide-y divide-slate-100">
+                <tr>
+                  <td class="py-3.5 px-4 font-bold text-brand-navy">PGY-1</td>
+                  <td class="py-3.5 px-4">1 half-day per week</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">4 patients / session</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">6 patients / session</td>
+                  <td class="py-3.5 px-4 text-slate-600">Preventive care, routine acute evaluations, and panel onboarding.</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-bold text-brand-navy">PGY-2</td>
+                  <td class="py-3.5 px-4">2 half-days per week</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">7 patients / session (14/day)</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">8 patients / session (16/day)</td>
+                  <td class="py-3.5 px-4 text-slate-600">Multiple chronic disease management, transitions of care, and complex workups.</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-4 font-bold text-brand-navy">PGY-3</td>
+                  <td class="py-3.5 px-4">3 half-days per week</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">9 patients / session</td>
+                  <td class="py-3.5 px-4 font-semibold text-brand-tealDark">10 patients / session</td>
+                  <td class="py-3.5 px-4 text-slate-600">Autonomous panel leadership, practice management, and interprofessional coordination.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 5. GOALS AND OBJECTIVES                        -->
+    <!-- ============================================== -->
+    <section id="page-goals" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Competency-Based Education</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Goals and Educational Objectives</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Our curriculum adheres rigorously to the ACGME Core Competencies, ensuring that graduating residents possess the knowledge, surgical and procedural capabilities, and ethical foundation required for independent, autonomous family practice.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-stethoscope text-brand-teal"></i> Patient Care & Procedural Skills
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Provide whole-person, family-centered, community-focused continuous care across the human lifespan.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Demonstrate independent management of undifferentiated ambulatory complaints and acutely hospitalized adults and children.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Perform essential procedures: spontaneous vaginal deliveries, POCUS, joint injections, suturing, and minor dermatologic surgeries.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-book-medical text-brand-teal"></i> Medical Knowledge
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Demonstrate comprehensive understanding of biomedical, clinical, and epidemiological sciences relevant to primary care.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Understand prior probability and test performance characteristics to order and interpret diagnostic testing judiciously.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Formulate evidence-based treatment plans tailored to patient social determinants of health and economic circumstances.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-chart-pie text-brand-teal"></i> Practice-Based Learning & Improvement
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Systematically analyze practice panels using clinical quality indicators and patient outcomes to optimize care delivery.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Design and execute interdisciplinary Quality Improvement (QI) and patient safety projects.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Formulate targeted clinical questions and appraise medical literature critically for real-world applicability and bias.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+            <h3 class="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-users-gear text-brand-teal"></i> Systems-Based Practice & Leadership
+            </h3>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Navigate complex healthcare systems, care coordination networks, insurance models, and community support agencies.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Lead interprofessional clinical teams (nursing, pharmacy, social work, medical assistants) effectively.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-brand-teal mt-0.5"></i>
+                <span>Advocate for health equity, eliminate care disparities, and practice high-value, cost-conscious medical stewardship.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 6. ROTATIONS (CORE, ELECTIVE, MED STUDENTS)    -->
+    <!-- ============================================== -->
+    <section id="page-rotations" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Clinical Curriculum</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Residency Rotations</h1>
+          <p class="text-slate-600 mt-2">Comprehensive hands-on training structured across inpatient tertiary services and longitudinal community settings.</p>
+        </div>
+
+        <!-- Tab Switching for Rotations -->
+        <div class="flex justify-center border-b border-slate-200 mb-10">
+          <button onclick="switchRotationsTab('core')" id="tab-btn-core" class="px-6 py-3 font-bold text-sm border-b-2 border-brand-teal text-brand-teal">Core Rotations</button>
+          <button onclick="switchRotationsTab('elective')" id="tab-btn-elective" class="px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700">Elective Rotations</button>
+          <button onclick="switchRotationsTab('medstudents')" id="tab-btn-medstudents" class="px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700">Medical Student Rotations</button>
+        </div>
+
+        <!-- 6A: Core Rotations Content -->
+        <div id="rot-tab-core" class="space-y-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-hospital-user"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Inpatient Adult Medicine</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">600 Hours • 750+ Encounters</p>
+              <p class="text-sm text-slate-600">Rigorous adult inpatient medicine services at University Health. Residents diagnose complex multisystem conditions, manage acute resuscitations, and lead inpatient discharge transitions.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-bed-pulse"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Critical Care / ICU</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">PGY-2 & PGY-3 Intensive</p>
+              <p class="text-sm text-slate-600">Management of critically ill patients, mechanical ventilation, vasopressor titration, arterial lines, central lines, and complex family prognostic conferences.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-person-pregnant"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Obstetrics & Maternal Care</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">200 Hours • 20+ Deliveries</p>
+              <p class="text-sm text-slate-600">Labor and delivery suite management, triage, spontaneous vaginal deliveries, recognition of obstetric emergencies, postpartum care, and newborn transitions.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-child-reaching"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Pediatrics (Inpatient & Ambulatory)</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">PGY-1 & PGY-2</p>
+              <p class="text-sm text-slate-600">Comprehensive infant, child, and adolescent care. Newborn nursery evaluations, inpatient pediatric service, ambulatory well-child checks, PALS, and NRP training.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-truck-medical"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Emergency Medicine</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">100 Hours • 125+ Encounters</p>
+              <p class="text-sm text-slate-600">Dedicated emergency department shifts caring for acutely ill and injured patients, airway stabilization, rapid triage, wound closure, and procedural sedation.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-bone"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Musculoskeletal & Sports Medicine</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">Ambulatory & Inpatient</p>
+              <p class="text-sm text-slate-600">Outpatient orthopedics, acute joint injuries, sports physicals, fracture care, joint aspirations/injections, casting/splinting, and physical therapy coordination.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-user-plus"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Geriatrics & Palliative Medicine</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">100 Hours • 125+ Encounters</p>
+              <p class="text-sm text-slate-600">Comprehensive assessment of older adults across hospital, clinic, and skilled nursing facilities, focusing on polypharmacy, fall prevention, cognitive screening, and goals of care.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-scalpel"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">General Surgery</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">PGY-1 Experience</p>
+              <p class="text-sm text-slate-600">Surgical triage, preoperative clearance, perioperative fluid/electrolyte optimization, post-op care, and assisting with core surgical procedures.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-chart-network"></i></div>
+              <h4 class="font-bold text-brand-navy text-lg mb-1">Health System Management (HSM)</h4>
+              <p class="text-xs text-brand-tealDark font-semibold uppercase mb-3">PGY-2 Dedicated</p>
+              <p class="text-sm text-slate-600">Clinical practice operations, billing and coding compliance, healthcare economics, value-based care contracts, population health metrics, and clinical leadership.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6B: Elective Rotations Content -->
+        <div id="rot-tab-elective" class="hidden space-y-6">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="max-w-3xl mb-8">
+              <h3 class="text-xl font-bold text-brand-navy mb-2">Individualized Learning Curriculum (6 Months Electives)</h3>
+              <p class="text-sm text-slate-600">
+                To help residents tailor their training to specific career aspirations (whether rural medicine, hospitalist fellowship, sports medicine, or academic medicine), RFM provides up to <strong>six months of dedicated elective time</strong> guided by Individualized Learning Plans (ILPs).
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Advanced Dermatology</p>
+                <p class="text-xs text-slate-500 mt-1">Dermoscopy, excision techniques, cryotherapy, and biopsy clinics.</p>
+              </div>
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Point-of-Care Ultrasound (POCUS)</p>
+                <p class="text-xs text-slate-500 mt-1">Diagnostic echo, lung ultrasound, abdominal FAST, and vascular access.</p>
+              </div>
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Integrative & Lifestyle Medicine</p>
+                <p class="text-xs text-slate-500 mt-1">Culinary medicine, metabolic syndrome reversal, and nutrition counseling.</p>
+              </div>
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Addiction Medicine</p>
+                <p class="text-xs text-slate-500 mt-1">Office-based opioid treatment (buprenorphine), harm reduction, and recovery.</p>
+              </div>
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Outpatient Psychiatry</p>
+                <p class="text-xs text-slate-500 mt-1">Complex psychopharmacology, mood disorders, and CBT counseling.</p>
+              </div>
+              <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                <p class="font-bold text-brand-navy text-sm">Global & Border Health</p>
+                <p class="text-xs text-slate-500 mt-1">Care models addressing regional South Texas border health challenges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6C: Medical Student Rotations Content -->
+        <div id="rot-tab-medstudents" class="hidden space-y-6">
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="max-w-3xl mb-8">
+              <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Learner Opportunities</span>
+              <h3 class="text-2xl font-bold text-brand-navy mt-1 mb-3">Medical Student Electives & Sub-Internships</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Retama Family Medicine welcomes ambitious medical students seeking immersive, supportive clinical experiences. Our rotations are exclusively open to <strong>3rd and 4th-year medical students</strong> from LCME- and COCA-accredited institutions.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- MS3 Details -->
+              <div class="p-6 bg-brand-surface rounded-xl border border-slate-200">
+                <div class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded-md mb-3">MS3 Clerkship Experience</div>
+                <h4 class="text-lg font-bold text-brand-navy mb-3">Foundational Family Medicine (3rd Year)</h4>
+                <p class="text-sm text-slate-600 mb-4">The objective is to acquaint you with every facet of the Family Medicine specialty, while collaborating closely with supervising faculty and residents on:</p>
+                <ul class="space-y-2 text-sm text-slate-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Conducting comprehensive history and physical examinations.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Formulating accurate, prioritized differential diagnoses.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Crafting patient-centered, guideline-based treatment plans.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Enhancing structured, concise oral presentation skills.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- MS4 Details -->
+              <div class="p-6 bg-brand-surface rounded-xl border border-slate-200">
+                <div class="inline-block px-3 py-1 bg-brand-navy text-white text-xs font-bold rounded-md mb-3">MS4 Sub-Internship / AI</div>
+                <h4 class="text-lg font-bold text-brand-navy mb-3">Sub-Internship & Electives (4th Year)</h4>
+                <p class="text-sm text-slate-600 mb-4">Our aim is to acquaint you with all facets of full-scope Family Medicine and support the development of your particular clinical interests. We collaborate closely on:</p>
+                <ul class="space-y-2 text-sm text-slate-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Conducting thorough, advanced history and physical examinations.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Formulating comprehensive, high-complexity differential diagnoses.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Crafting effective inpatient and outpatient management plans.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                    <span>Polishing intern-level oral presentation skills and patient handoffs.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg flex items-center justify-between flex-wrap gap-4">
+              <div class="text-sm text-brand-blue font-medium">
+                <i class="fa-solid fa-circle-info mr-1"></i> Interested in scheduling an MS3 clerkship or MS4 acting internship?
+              </div>
+              <button onclick="navigateTo('contact')" class="px-4 py-2 bg-brand-navy text-white text-xs font-bold rounded hover:bg-brand-dark transition">Contact Medical Student Coordinator</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 7. DIDACTICS & SCHOLARSHIP                     -->
+    <!-- ============================================== -->
+    <section id="page-didactics" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Academic Excellence</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Protected Academic Didactics</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Education is safeguarded at Retama Family Medicine. Every Thursday afternoon is 100% protected from all routine inpatient and outpatient duties, allowing residents and faculty to gather for interactive, evidence-based learning.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-brand-teal/10 text-brand-teal flex items-center justify-center font-bold text-lg mb-4">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">Core Clinical Curriculum</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">System-based modular lectures reviewing current American Board of Family Medicine (ABFM) guidelines, acute and chronic disease management, pharmacology pearls, and outpatient clinical pearls.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-lg mb-4">
+              <i class="fa-solid fa-hands-holding"></i>
+            </div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">Hands-On Simulation & Skills</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Quarterly procedural workshops covering Point-of-Care Ultrasound (POCUS), joint injections, punch/shave biopsies, Nexplanon insertion and removal, IUD placement, and advanced laceration repair.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-lg mb-4">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">Journal Club & Evidence Analysis</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Regularly scheduled critical appraisal sessions. Residents dissect recent RCTs, evaluate study methodology for bias, and assess how findings can be applied directly to South Texas patient care.</p>
+          </div>
+        </div>
+
+        <!-- Sample Schedule Table -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+          <h3 class="text-lg font-bold text-brand-navy mb-4">Typical Thursday Afternoon Didactic Block (1:00 PM – 5:00 PM)</h3>
+          <div class="divide-y divide-slate-100 text-sm">
+            <div class="py-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+              <span class="font-semibold text-brand-navy w-44">1:00 PM – 2:00 PM</span>
+              <span class="text-slate-700 flex-1">Core Organ-System Review & Evidence-Based Guidelines</span>
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Faculty Led</span>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+              <span class="font-semibold text-brand-navy w-44">2:00 PM – 3:00 PM</span>
+              <span class="text-slate-700 flex-1">Hands-on Procedural Lab / POCUS Simulation Workshop</span>
+              <span class="text-xs bg-brand-accent px-2 py-1 rounded text-brand-tealDark font-semibold">Interactive</span>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+              <span class="font-semibold text-brand-navy w-44">3:00 PM – 4:00 PM</span>
+              <span class="text-slate-700 flex-1">Resident Journal Club or Quality Improvement (QI) Project Group</span>
+              <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-600">Resident Showcase</span>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+              <span class="font-semibold text-brand-navy w-44">4:00 PM – 5:00 PM</span>
+              <span class="text-slate-700 flex-1">Resident Forum / Program Director Town Hall / Wellness Debrief</span>
+              <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded font-semibold">Protected Wellness</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 8. MEET FACULTY AND ADMIN                      -->
+    <!-- ============================================== -->
+    <section id="page-faculty" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Leadership & Mentorship</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Meet Our Faculty and Administration</h1>
+          <p class="text-slate-600 mt-3">Experienced, compassionate clinical educators dedicated to mentoring the next generation of Family Medicine physician leaders.</p>
+        </div>
+
+        <!-- Program Director Feature Card -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-md mb-12 max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3">
+            <div class="h-80 md:h-auto bg-slate-100 relative">
+              <img src="image_d505cc.jpg" alt="Dr. Ali Feili, MD, MBA" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Ali+Feili+MD'" />
+            </div>
+            <div class="md:col-span-2 p-8 sm:p-10 flex flex-col justify-between">
+              <div>
+                <span class="inline-block px-3 py-1 bg-brand-teal/10 text-brand-teal text-xs font-bold rounded mb-2">Program Director</span>
+                <h3 class="text-2xl font-bold text-brand-navy">Ali Feili, MD, MBA</h3>
+                <p class="text-xs font-semibold text-slate-500 uppercase mb-4">Family Medicine • Program Director</p>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">
+                  "At Retama Family Medicine, our mission is to prepare adaptable, compassionate physicians who are thoroughly prepared for the reality of clinical practice. Through our hybrid model, our residents bridge tertiary inpatient medicine with community-rooted care, keeping the patient and family at the center of all decisions."
+                </p>
+                <p class="text-xs text-slate-500"><em>Full biography coming soon.</em></p>
+              </div>
+              <div class="pt-6 border-t border-slate-100 flex items-center gap-4 text-slate-400 text-sm">
+                <span><i class="fa-solid fa-graduation-cap text-brand-teal mr-1"></i> ABFM Certified</span>
+                <span><i class="fa-solid fa-location-dot text-brand-teal mr-1"></i> San Antonio, TX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Faculty & Coordinator Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dr. Kelly Brooks -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <div class="h-72 bg-slate-100 relative">
+              <img src="image_d505ec.jpg" alt="Dr. Kelly Brooks, MD" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Kelly+Brooks+MD'" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 bg-blue-50 text-brand-blue text-xs font-semibold rounded mb-2">Core Faculty</span>
+                <h4 class="text-xl font-bold text-brand-navy">Dr. Kelly Brooks, MD</h4>
+                <p class="text-xs font-medium text-slate-500 uppercase mb-3">Family Medicine Core Educator</p>
+                <p class="text-xs text-slate-500 italic">Full biography coming soon.</p>
+              </div>
+              <div class="pt-4 mt-6 border-t border-slate-100 text-xs text-slate-500">
+                <i class="fa-solid fa-envelope text-brand-teal mr-1"></i> Faculty Member
+              </div>
+            </div>
+          </div>
+
+          <!-- Dr. Michael Dybdal-Hargreaves -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <div class="h-72 bg-slate-100 relative">
+              <img src="image_d5060a.jpg" alt="Michael Dybdal-Hargreaves, MD" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Michael+Dybdal+Hargreaves+MD'" />
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 bg-blue-50 text-brand-blue text-xs font-semibold rounded mb-2">Core Faculty</span>
+                <h4 class="text-xl font-bold text-brand-navy">Michael Dybdal-Hargreaves, MD</h4>
+                <p class="text-xs font-medium text-slate-500 uppercase mb-3">Family Medicine Core Educator</p>
+                <p class="text-xs text-slate-500 italic">Full biography coming soon.</p>
+              </div>
+              <div class="pt-4 mt-6 border-t border-slate-100 text-xs text-slate-500">
+                <i class="fa-solid fa-envelope text-brand-teal mr-1"></i> Faculty Member
+              </div>
+            </div>
+          </div>
+
+          <!-- Logan N. McMahan -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+            <div class="h-72 bg-slate-100 flex items-center justify-center text-slate-300">
+              <i class="fa-solid fa-user-tie text-6xl"></i>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded mb-2">Residency Administration</span>
+                <h4 class="text-xl font-bold text-brand-navy">Logan N. McMahan</h4>
+                <p class="text-xs font-medium text-slate-500 uppercase mb-3">Program Coordinator</p>
+                <p class="text-xs text-slate-600">Oversees residency operations, recruitment coordination, ERAS application processing, and resident academic scheduling.</p>
+              </div>
+              <div class="pt-4 mt-6 border-t border-slate-100 text-xs text-slate-500">
+                <i class="fa-solid fa-envelope text-brand-teal mr-1"></i> coordinator@retamafm.org
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 9. MEET RESIDENTS                              -->
+    <!-- ============================================== -->
+    <section id="page-residents" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Our Trainees</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Meet Our Residents</h1>
+          <p class="text-slate-600 mt-2">Explore the profiles of our resident physicians. Click any resident card to view their complete background, clinical interests, research, and awards.</p>
+        </div>
+
+        <!-- Class Filter Tabs -->
+        <div class="flex justify-center border-b border-slate-200 mb-10">
+          <button onclick="switchResidentClass('pgy1')" id="class-btn-pgy1" class="px-6 py-3 font-bold text-sm border-b-2 border-brand-teal text-brand-teal">PGY-1 Class (Inaugural)</button>
+          <button onclick="switchResidentClass('pgy2')" id="class-btn-pgy2" class="px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700">PGY-2 Class</button>
+          <button onclick="switchResidentClass('pgy3')" id="class-btn-pgy3" class="px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700">PGY-3 Class</button>
+        </div>
+
+        <!-- PGY-1 Class Grid (8 Resident Slots) -->
+        <div id="class-pgy1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Template generated 8 residents for PGY1 -->
+          <!-- Resident 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(1)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Alex Ramos, MD</h4>
+              <p class="text-xs text-slate-500">Hometown: San Antonio, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(2)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Sofia Chen, DO</h4>
+              <p class="text-xs text-slate-500">Hometown: Austin, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(3)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Marcus Taylor, MD</h4>
+              <p class="text-xs text-slate-500">Hometown: El Paso, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 4 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(4)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Elena Gutierrez, DO, MPH</h4>
+              <p class="text-xs text-slate-500">Hometown: McAllen, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 5 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(5)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">David Kim, MD</h4>
+              <p class="text-xs text-slate-500">Hometown: Dallas, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 6 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(6)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Hannah Al-Mansoor, MD</h4>
+              <p class="text-xs text-slate-500">Hometown: Houston, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 7 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(7)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Jordan Campbell, DO</h4>
+              <p class="text-xs text-slate-500">Hometown: Denver, CO</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+
+          <!-- Resident 8 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition cursor-pointer flex flex-col justify-between" onclick="openResidentModal(8)">
+            <div>
+              <div class="h-44 bg-slate-100 rounded-lg mb-4 flex items-center justify-center text-slate-400">
+                <i class="fa-solid fa-user-doctor text-4xl"></i>
+              </div>
+              <span class="text-xs font-bold text-brand-teal">PGY-1 Resident</span>
+              <h4 class="font-bold text-brand-navy text-lg mt-0.5">Priya Patel, MD</h4>
+              <p class="text-xs text-slate-500">Hometown: Corpus Christi, TX</p>
+            </div>
+            <button class="mt-4 w-full py-2 bg-brand-surface hover:bg-brand-accent text-brand-tealDark font-semibold text-xs rounded border border-slate-200 transition">View Full Q&A Profile</button>
+          </div>
+        </div>
+
+        <!-- PGY-2 Class Grid (Placeholder holding state) -->
+        <div id="class-pgy2" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="text-brand-teal text-4xl mb-4"><i class="fa-solid fa-user-group"></i></div>
+          <h3 class="text-xl font-bold text-brand-navy">PGY-2 Class Maturing Cohort</h3>
+          <p class="text-sm text-slate-500 max-w-md mx-auto mt-2">Resident profiles for the rising PGY-2 class will be showcased following class matriculation and onboarding.</p>
+        </div>
+
+        <!-- PGY-3 Class Grid (Placeholder holding state) -->
+        <div id="class-pgy3" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 p-8">
+          <div class="text-brand-navy text-4xl mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3 class="text-xl font-bold text-brand-navy">PGY-3 Chief & Senior Class</h3>
+          <p class="text-sm text-slate-500 max-w-md mx-auto mt-2">Senior resident leadership, future practice destinations, and fellowship match profiles will be displayed here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESIDENT MODAL WITH DETAILED Q/A -->
+    <div id="residentModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative">
+        <button onclick="closeResidentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl p-2 focus:outline-none">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+          <div class="w-16 h-16 bg-brand-accent text-brand-teal rounded-full flex items-center justify-center text-2xl font-bold">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-brand-teal uppercase" id="modalResidentClass">PGY-1 Resident</span>
+            <h3 class="text-2xl font-black text-brand-navy" id="modalResidentName">Alex Ramos, MD</h3>
+            <p class="text-xs text-slate-500" id="modalResidentHometown">Hometown: San Antonio, Texas</p>
+          </div>
+        </div>
+
+        <!-- Standardized 11-Question Profile -->
+        <div class="space-y-4 text-sm">
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Where did you attend medical school?</p>
+            <p class="text-slate-700 mt-1" id="q-medschool">Long School of Medicine, UT Health San Antonio</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">What other educational credentials do you have?</p>
+            <p class="text-slate-700 mt-1" id="q-credentials">B.S. in Biology, Minor in Spanish</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">What are your particular clinical interests and why?</p>
+            <p class="text-slate-700 mt-1" id="q-interests">Preventive cardiology, diabetes management, and adolescent medicine. I am passionate about interrupting chronic illness before complications arise.</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">What inspired you to pursue a career in family medicine?</p>
+            <p class="text-slate-700 mt-1" id="q-inspire">Growing up seeing whole families navigate healthcare obstacles together. I wanted to be the doctor who knows the patient, their parents, and their children longitudinally.</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Why did you choose the Community-Based Family Medicine Residency program?</p>
+            <p class="text-slate-700 mt-1" id="q-why-rfm">The perfect hybrid between tertiary hospital training at University Health and frontline community clinics with CommuniCare, all 100% based locally in San Antonio.</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Have you undertaken any research in the past?</p>
+            <p class="text-slate-700 mt-1" id="q-research">Clinical research on barriers to glycemic control among South Texas Hispanic populations utilizing mobile health tracking.</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Previous Poster Presentations:</p>
+            <p class="text-slate-700 mt-1" id="q-posters">Presented at TAFP Annual Session: "Improving Adolescent Immunization Rates through Community Promotora Outreach."</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Publications:</p>
+            <p class="text-slate-700 mt-1" id="q-publications">Co-author, "Telehealth Adoption in Underserved Ambulatory Settings," Journal of Primary Care Innovation (2024).</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Honors or Awards Received:</p>
+            <p class="text-slate-700 mt-1" id="q-awards">Gold Humanism Honor Society; Excellence in Community Health Service Award.</p>
+          </div>
+
+          <div class="bg-brand-surface p-4 rounded-lg">
+            <p class="font-bold text-brand-navy text-xs uppercase tracking-wide">Hobbies and interests outside of medicine:</p>
+            <p class="text-slate-700 mt-1" id="q-hobbies">Trail running along the San Antonio Missions Reach, grilling Texas barbecue with family, and learning acoustic guitar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 10. APPLY TO RFM                               -->
+    <!-- ============================================== -->
+    <section id="page-apply" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Admissions & Eligibility</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Apply to Retama Family Medicine</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Retama Family Medicine will participate in the Electronic Residency Application Service (ERAS) of the Association of American Medical Colleges (AAMC) and the National Resident Matching Program (NRMP).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Application IDs & Info -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div class="text-brand-teal text-2xl mb-3"><i class="fa-solid fa-id-card"></i></div>
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Match Information</h3>
+            <div class="space-y-3 text-sm text-slate-600">
+              <p><strong>ERAS Program ID:</strong> <span class="text-slate-500 font-semibold">TBD</span></p>
+              <p><strong>NRMP Program Code:</strong> <span class="text-slate-500 font-semibold">TBD</span></p>
+              <p><strong>Total Approved Positions:</strong> 8 Residents per year (24 Total)</p>
+              <p><strong>Application Deadline:</strong> Adheres to annual ERAS match timetable.</p>
+            </div>
+          </div>
+
+          <!-- Eligibility Core -->
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm lg:col-span-2">
+            <div class="text-brand-navy text-2xl mb-3"><i class="fa-solid fa-user-check"></i></div>
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Applicant Eligibility Criteria</h3>
+            <p class="text-sm text-slate-600 mb-4">Applicants must have graduated from one of the following to be considered for an interview and ranking:</p>
+            <ul class="space-y-2 text-sm text-slate-700">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                <span>Graduates of medical schools in the US and Canada accredited by the Liaison Committee on Medical Education (LCME).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                <span>Graduates of colleges of osteopathic medicine in the US accredited by the American Osteopathic Association (AOA).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                <span>Graduates of medical schools outside the US who have completed a Fifth Pathway program provided by an LCME-accredited medical school.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-brand-teal mt-1 text-xs"></i>
+                <span>International medical graduates (IMGs) with a currently valid certificate from the Educational Commission for Foreign Medical Graduates (ECFMG) or a full and unrestricted US medical license.</span>
+              </li>
+            </ul>
+            <div class="mt-4 p-3 bg-amber-50 border-l-4 border-amber-500 text-xs text-amber-900">
+              <strong>Important Policies:</strong> Date of graduation must be no more than <strong>5 years</strong> from the date of application in ERAS. All applicants <strong>MUST be U.S. citizens or permanent residents</strong>. We do not sponsor H-1B visas.
+            </div>
+          </div>
+        </div>
+
+        <!-- Required Application Documents & Exam Thresholds -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+          <h3 class="text-xl font-bold text-brand-navy mb-6">Required Documentation & Examination Requirements</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold text-brand-tealDark text-sm uppercase tracking-wide mb-3">Required Documents in ERAS</h4>
+              <ul class="space-y-2.5 text-sm text-slate-700">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-file-lines text-brand-teal"></i> Complete ERAS Application & Personal Statement</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-file-lines text-brand-teal"></i> Medical Student Performance Evaluation (MSPE / Dean's Letter)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-file-lines text-brand-teal"></i> At least two (2) Letters of Recommendation (LORs)</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-file-lines text-brand-teal"></i> Official Medical School Transcript</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-file-lines text-brand-teal"></i> Valid ECFMG Status Report (if applicable)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="font-bold text-brand-tealDark text-sm uppercase tracking-wide mb-3">Board Examination Minimums</h4>
+              <div class="space-y-4 text-sm text-slate-700">
+                <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                  <p class="font-bold text-brand-navy">NBOME (COMLEX)</p>
+                  <p class="text-xs text-slate-600 mt-1">Minimum passing score of <strong>400</strong> for COMLEX Level 1 and Level 2-CE. Must take and pass Level 2-PE (we will still consider applicants who plan to retake or have not yet taken Level 2-PE).</p>
+                </div>
+                <div class="p-4 bg-brand-surface rounded-lg border border-slate-200">
+                  <p class="font-bold text-brand-navy">USMLE</p>
+                  <p class="text-xs text-slate-600 mt-1">Minimum passing score of <strong>194</strong> for Step 1 and <strong>209</strong> for Step 2 CK (we will still consider applicants who plan to retake or have Step 2 CK scheduled).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 11. LIFE IN SAN ANTONIO                        -->
+    <!-- ============================================== -->
+    <section id="page-san-antonio" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">South Texas Culture</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Life in San Antonio</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            San Antonio offers the perfect balance of big-city opportunities, rich historical heritage, vibrant cultural festivals, and family-friendly affordability. With an affordable cost of living, 300+ days of sunshine, and no state income tax, it is an ideal place to train and live.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="text-brand-teal text-3xl mb-4"><i class="fa-solid fa-tree"></i></div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">The Great Outdoors</h3>
+            <p class="text-sm text-slate-600">Explore over 15 miles of paved hike-and-bike trails along the historic Mission Reach, kayak on the San Antonio River, or escape to the rolling Texas Hill Country within a short 30-minute drive.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="text-brand-teal text-3xl mb-4"><i class="fa-solid fa-utensils"></i></div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">Culinary Capital</h3>
+            <p class="text-sm text-slate-600">Designated a UNESCO Creative City of Gastronomy. From authentic street tacos to fine dining at the Historic Pearl, San Antonio's culinary diversity is unmatched.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <div class="text-brand-teal text-3xl mb-4"><i class="fa-solid fa-house"></i></div>
+            <h3 class="font-bold text-brand-navy text-lg mb-2">Affordable Living</h3>
+            <p class="text-sm text-slate-600">Resident salaries go significantly further here. Housing options range from modern downtown apartments to suburban homes with yards close to University Health and CommuniCare clinic sites.</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-brand-navy to-brand-dark text-white rounded-2xl p-8 sm:p-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl font-bold mb-3">Community & Culture at Your Doorstep</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Experience Fiesta San Antonio, visit the San Antonio Zoo and Botanical Garden, catch an NBA game with the San Antonio Spurs, and immerse yourself in the warm hospitality of South Texas.
+              </p>
+              <div class="flex gap-4 text-xs font-semibold text-brand-teal">
+                <span>#7 Largest US City</span> • <span>No State Income Tax</span> • <span>Family Oriented</span>
+              </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/10">
+              <h4 class="font-bold text-white text-base mb-2">Zero Extended Commutes</h4>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                All clinical rotation sites are situated directly in San Antonio. You won't waste valuable rest hours commuting to distant cities for hospital or clinic requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 12. CONTACT US                                 -->
+    <!-- ============================================== -->
+    <section id="page-contact" class="page-section py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-tealDark font-bold text-xs uppercase tracking-widest">Get in Touch</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy mt-1">Contact Program Administration</h1>
+          <p class="text-slate-600 mt-4 leading-relaxed">
+            Have questions about application timelines, medical student acting internships, or program accreditation? Our residency leadership and GME team are here to help.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Information Card -->
+          <div class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-brand-accent text-brand-teal rounded-lg text-lg"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <h4 class="font-bold text-brand-navy text-base">Program Location</h4>
+                  <p class="text-sm text-slate-600 mt-1">Retama Campus • TIGMER GME Consortium<br />San Antonio, TX</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-brand-accent text-brand-teal rounded-lg text-lg"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <h4 class="font-bold text-brand-navy text-base">Email Inquiries</h4>
+                  <p class="text-sm text-slate-600 mt-1">General: contact@retamafm.org<br />Residency Coordinator: Logan N. McMahan</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="p-3 bg-brand-accent text-brand-teal rounded-lg text-lg"><i class="fa-solid fa-handshake"></i></div>
+                <div>
+                  <h4 class="font-bold text-brand-navy text-base">Sponsoring & Clinical Affiliates</h4>
+                  <p class="text-sm text-slate-600 mt-1">TIGMER • University Health • CommuniCare Health Centers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-brand-navy mb-4">Send a Message</h3>
+            <form onsubmit="event.preventDefault(); alert('Thank you for reaching out to Retama Family Medicine. A member of our administration team will respond promptly.');" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-brand-navy uppercase mb-1">Your Full Name</label>
+                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-teal" placeholder="e.g., Dr. Jane Doe" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-brand-navy uppercase mb-1">Email Address</label>
+                  <input type="email" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-teal" placeholder="jane@example.com" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-brand-navy uppercase mb-1">Applicant Role</label>
+                  <select class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-teal">
+                    <option>Prospective Residency Applicant</option>
+                    <option>MS3 / MS4 Medical Student</option>
+                    <option>Faculty / Physician Candidate</option>
+                    <option>Other / General Inquiry</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-brand-navy uppercase mb-1">Subject</label>
+                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-teal" placeholder="e.g., Question about Acting Internships" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-brand-navy uppercase mb-1">Message</label>
+                <textarea rows="4" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-teal" placeholder="How can we assist you?"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3 bg-brand-teal hover:bg-brand-tealDark text-white font-bold text-sm rounded-lg transition shadow-md">
+                Send Inquiry to RFM Team
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-navy text-slate-400 text-xs py-12 border-t border-brand-dark mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="TIGMER Logo.jpg" alt="TIGMER Logo" class="h-8 w-auto rounded" onerror="this.src='https://via.placeholder.com/32x32?text=TIGMER'" />
+            <span class="text-white font-bold text-base">Retama Family Medicine Residency</span>
+          </div>
+          <p class="text-slate-400 text-xs max-w-md leading-relaxed">
+            A comprehensive community-based Family Medicine training program sponsored by TIGMER in collaboration with University Health and CommuniCare Health Centers in San Antonio, Texas.
+          </p>
+        </div>
+        <div>
+          <p class="text-white font-bold text-xs uppercase tracking-wider mb-3">Quick Navigation</p>
+          <ul class="space-y-1.5">
+            <li><a href="javascript:void(0)" onclick="navigateTo('why-choice')" class="hover:text-brand-teal transition">Why RFM</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('rotations')" class="hover:text-brand-teal transition">Curriculum & Rotations</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('faculty')" class="hover:text-brand-teal transition">Faculty Roster</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('residents')" class="hover:text-brand-teal transition">Meet Residents</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-bold text-xs uppercase tracking-wider mb-3">Applicant Resources</p>
+          <ul class="space-y-1.5">
+            <li><a href="javascript:void(0)" onclick="navigateTo('apply')" class="hover:text-brand-teal transition">Eligibility Criteria</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('rotations'); switchRotationsTab('medstudents')" class="hover:text-brand-teal transition">Medical Student Rotations</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('san-antonio')" class="hover:text-brand-teal transition">Life in San Antonio</a></li>
+            <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-brand-teal transition">Contact Coordinator</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-brand-dark flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+        <p>© 2026 Retama Family Medicine Residency Program. All Rights Reserved.</p>
+        <p>ACGME Application in Process • Anticipated Start July 1, 2027</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT-SIDE ROUTING & MODAL INTERACTION SCRIPT -->
+  <script>
+    // 1. Page Section Switching
+    function navigateTo(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+
+      // Show targeted page
+      const target = document.getElementById('page-' + pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Update Nav active classes
+      document.querySelectorAll('.nav-item').forEach(nav => {
+        nav.classList.remove('active-nav');
+      });
+      const activeNavBtn = document.getElementById('nav-' + pageId);
+      if (activeNavBtn) {
+        activeNavBtn.classList.add('active-nav');
+      }
+    }
+
+    // 2. Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // 3. Rotations Tab Switcher
+    function switchRotationsTab(tabName) {
+      document.getElementById('rot-tab-core').classList.add('hidden');
+      document.getElementById('rot-tab-elective').classList.add('hidden');
+      document.getElementById('rot-tab-medstudents').classList.add('hidden');
+
+      document.getElementById('tab-btn-core').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+      document.getElementById('tab-btn-elective').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+      document.getElementById('tab-btn-medstudents').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+
+      document.getElementById('rot-tab-' + tabName).classList.remove('hidden');
+      document.getElementById('tab-btn-' + tabName).className = "px-6 py-3 font-bold text-sm border-b-2 border-brand-teal text-brand-teal";
+    }
+
+    // 4. Resident Class Switcher
+    function switchResidentClass(className) {
+      document.getElementById('class-pgy1').classList.add('hidden');
+      document.getElementById('class-pgy2').classList.add('hidden');
+      document.getElementById('class-pgy3').classList.add('hidden');
+
+      document.getElementById('class-btn-pgy1').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+      document.getElementById('class-btn-pgy2').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+      document.getElementById('class-btn-pgy3').className = "px-6 py-3 font-bold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700";
+
+      document.getElementById('class-' + className).classList.remove('hidden');
+      document.getElementById('class-btn-' + className).className = "px-6 py-3 font-bold text-sm border-b-2 border-brand-teal text-brand-teal";
+    }
+
+    // 5. Resident Modal Data Dictionary (8 Residents for PGY1)
+    const residentProfiles = {
+      1: {
+        name: "Alex Ramos, MD",
+        classYear: "PGY-1 Resident",
+        hometown: "San Antonio, TX",
+        medSchool: "Long School of Medicine, UT Health San Antonio",
+        credentials: "B.S. in Biology, Minor in Spanish",
+        interests: "Preventive cardiology, diabetes management, and adolescent health.",
+        inspire: "Seeing my extended family navigate barriers to healthcare in South Texas inspired me to become a full-scope community physician.",
+        whyRFM: "The perfect hybrid of high-acuity training at University Health combined with frontline community primary care at CommuniCare.",
+        research: "Barriers to glycemic control among South Texas Hispanic populations utilizing mobile health tracking.",
+        posters: "TAFP Annual Session: 'Improving Adolescent Immunization Rates through Community Outreach.'",
+        publications: "Co-author, 'Telehealth Adoption in Underserved Ambulatory Settings' (2024).",
+        awards: "Gold Humanism Honor Society; Excellence in Community Health Service Award.",
+        hobbies: "Trail running along the San Antonio Missions Reach, smoking Texas barbecue, and acoustic guitar."
+      },
+      2: {
+        name: "Sofia Chen, DO",
+        classYear: "PGY-1 Resident",
+        hometown: "Austin, TX",
+        medSchool: "University of North Texas Health Science Center (TCOM)",
+        credentials: "B.A. in Psychology",
+        interests: "Osteopathic Manipulative Medicine (OMM), sports medicine, and women's health.",
+        inspire: "The philosophy of treating the mind, body, and spirit throughout all phases of a person's life.",
+        whyRFM: "Strong faculty mentorship and the ability to train locally without having to travel for out-of-town rotations.",
+        research: "Comparative recovery rates of acute low back pain treated with OMT in primary care clinics.",
+        posters: "ACOFP Poster Expo: 'OMT as First-Line Adjunct in Primary Care Musculoskeletal Encounters.'",
+        publications: "None at this time.",
+        awards: "Touchstone Osteopathic Honors Fellowship.",
+        hobbies: "Rock climbing, exploring San Antonio coffee shops, and watercolor painting."
+      },
+      3: {
+        name: "Marcus Taylor, MD",
+        classYear: "PGY-1 Resident",
+        hometown: "El Paso, TX",
+        medSchool: "Texas Tech University Health Sciences Center Paul L. Foster School of Medicine",
+        credentials: "B.S. in Kinesiology",
+        interests: "Hospitalist medicine, acute resuscitation, and point-of-care ultrasound (POCUS).",
+        inspire: "The intellectual challenge of diagnostic uncertainty combined with building trusting doctor-patient bonds.",
+        whyRFM: "The robust 600 hours of inpatient medicine and ICU exposure alongside longitudinal outpatient panel management.",
+        research: "Accuracy of POCUS performed by primary care residents in acute dyspnea presentations.",
+        posters: "Society of Teachers of Family Medicine (STFM): 'Diagnostic Yield of Lung Ultrasound in Outpatient Clinics.'",
+        publications: "'Cardiopulmonary Assessment in Ambulatory Settings,' Primary Care Review (2025).",
+        awards: "Dean's List for Academic Performance in Clinical Clerkships.",
+        hobbies: "Road cycling the Texas Hill Country, cheering for the Spurs, and playing chess."
+      },
+      4: {
+        name: "Elena Gutierrez, DO, MPH",
+        classYear: "PGY-1 Resident",
+        hometown: "McAllen, TX",
+        medSchool: "University of the Incarnate Word School of Osteopathic Medicine (UIWSOM)",
+        credentials: "Master of Public Health (MPH) in Epidemiology",
+        interests: "Maternal-child health, prenatal care, and population health policy.",
+        inspire: "Desire to reduce maternal morbidity and ensure every child has a healthy start to life.",
+        whyRFM: "Commitment of TIGMER and CommuniCare to direct community advocacy and bilingual South Texas patient care.",
+        research: "Prenatal screening access in rural Texas counties along the Rio Grande Valley.",
+        posters: "American Public Health Association: 'Addressing Food Insecurity in Pregnant Medicaid Recipients.'",
+        publications: "'Maternal Outcomes in Community Health Centers,' Public Health Reports (2024).",
+        awards: "Excellence in Public Health Award; UIWSOM Service Scholar.",
+        hobbies: "Gardening, baking artisan bread, and hiking government canyon state natural area."
+      },
+      5: {
+        name: "David Kim, MD",
+        classYear: "PGY-1 Resident",
+        hometown: "Dallas, TX",
+        medSchool: "UT Southwestern Medical School",
+        credentials: "B.S. in Biochemistry",
+        interests: "Geriatric medicine, dementia care, and outpatient procedural skills.",
+        inspire: "Caring for my grandparents made me appreciate physicians who take time to listen and treat older adults with dignity.",
+        whyRFM: "The comprehensive geriatrics curriculum spanning acute hospital, clinic, and skilled nursing care.",
+        research: "Deprescribing interventions for polypharmacy in patients aged 75+.",
+        posters: "American Geriatrics Society: 'Systematic Medication Reconciliation in Primary Care.'",
+        publications: "None.",
+        awards: "Alpha Omega Alpha (AOA) Honor Medical Society.",
+        hobbies: "Playing violin in community orchestra, tennis, and photography."
+      },
+      6: {
+        name: "Hannah Al-Mansoor, MD",
+        classYear: "PGY-1 Resident",
+        hometown: "Houston, TX",
+        medSchool: "McGovern Medical School at UTHealth Houston",
+        credentials: "B.S. in Neuroscience",
+        interests: "Integrated behavioral health, addiction medicine, and lifestyle medicine.",
+        inspire: "Recognizing that mental health and physical health cannot be separated in clinical practice.",
+        whyRFM: "CommuniCare's model of fully integrated behavioral health inside the primary care exam room.",
+        research: "Medication-assisted treatment adherence in outpatient community clinics.",
+        posters: "TAMU Rural Health Forum: 'Overcoming Stigma in Buprenorphine Prescribing.'",
+        publications: "Co-author in Texas Medicine on primary care depression screening (2024).",
+        awards: "Houston Academy of Medicine Student Humanitarian Award.",
+        hobbies: "Kayaking the river, reading historical fiction, and yoga."
+      },
+      7: {
+        name: "Jordan Campbell, DO",
+        classYear: "PGY-1 Resident",
+        hometown: "Denver, CO",
+        medSchool: "Rocky Vista University College of Osteopathic Medicine",
+        credentials: "B.S. in Integrative Physiology",
+        interests: "Sports medicine, procedural dermatology, and adolescent wellness.",
+        inspire: "Being a former college athlete who benefited greatly from team physicians with a primary care background.",
+        whyRFM: "Hands-on procedural workshops, POCUS training, and the high-energy culture of the San Antonio community.",
+        research: "Concussion recovery protocols in high school athletes.",
+        posters: "AMSSM Annual Conference: 'Exertional Heat Illness in High School Football.'",
+        publications: "None.",
+        awards: "Student Clinician of the Year (RVUCOM).",
+        hobbies: "Mountain biking, golf, and watching soccer matches."
+      },
+      8: {
+        name: "Priya Patel, MD",
+        classYear: "PGY-1 Resident",
+        hometown: "Corpus Christi, TX",
+        medSchool: "Texas A&M University School of Medicine",
+        credentials: "B.S. in Biomedical Sciences",
+        interests: "Chronic disease management, high-value care, and medical education.",
+        inspire: "The challenge of being a master diagnostician and educating patients on their own wellness.",
+        whyRFM: "The progressive panel ownership model (4 to 10 patients) that emphasizes safety and clinical mastery.",
+        research: "Continuous glucose monitoring implementation in underserved type 2 diabetics.",
+        posters: "TAFP Annual Session: 'CGM Adherence in Primary Care Populations.'",
+        publications: "'Technology in Chronic Disease Management,' Primary Care Clinics (2025).",
+        awards: "Texas A&M Primary Care Scholar.",
+        hobbies: "Cooking Indian-fusion recipes, travel photography, and pickleball."
+      }
+    };
+
+    function openResidentModal(id) {
+      const data = residentProfiles[id];
+      if (!data) return;
+
+      document.getElementById('modalResidentName').innerText = data.name;
+      document.getElementById('modalResidentClass').innerText = data.classYear;
+      document.getElementById('modalResidentHometown').innerText = "Hometown: " + data.hometown;
+
+      document.getElementById('q-medschool').innerText = data.medSchool;
+      document.getElementById('q-credentials').innerText = data.credentials;
+      document.getElementById('q-interests').innerText = data.interests;
+      document.getElementById('q-inspire').innerText = data.inspire;
+      document.getElementById('q-why-rfm').innerText = data.whyRFM;
+      document.getElementById('q-research').innerText = data.research;
+      document.getElementById('q-posters').innerText = data.posters;
+      document.getElementById('q-publications').innerText = data.publications;
+      document.getElementById('q-awards').innerText = data.awards;
+      document.getElementById('q-hobbies').innerText = data.hobbies;
+
+      document.getElementById('residentModal').classList.remove('hidden');
+    }
+
+    function closeResidentModal() {
+      document.getElementById('residentModal').classList.add('hidden');
+    }
+
+    // Close modal if user clicks backdrop
+    window.onclick = function(event) {
+      const modal = document.getElementById('residentModal');
+      if (event.target === modal) {
+        modal.classList.add('hidden');
+      }
+    };
+  </script>
+</body>
+</html>
